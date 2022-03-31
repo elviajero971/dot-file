@@ -1,0 +1,34 @@
+# Easier navigation: .., ..., ~ and -
+alias ..="cd .."
+alias cd..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ~="cd ~" # `cd` is probably faster to type though
+alias -- -="cd -"
+
+# Git shortcuts
+alias g="git"
+alias undopush="git push -f origin HEAD^:master"
+alias gc="git clone"
+alias st="git st"
+alias gp="git pull"
+alias gd="git checkout develop"
+alias gdd="git checkout develop && git pull"
+alias gmm="git checkout master && git pull"
+alias gma="git checkout main && git pull"
+# use to add an empty commit with a message like: gempty "test ci again"
+alias gempty="git commit --allow-empty -m"
+# git push without running pre-push hooks
+alias gpno="git push --no-verify"
+
+# a couple of extra git aliases take from
+# https://news.ycombinator.com/item?id=8872334
+# better logs
+alias glog="git log --oneline --graph --all --decorate --pretty=format:'%h %cn %cr %C(Yellow)%d%Creset %s'"
+alias logo="git log --oneline --graph --all --decorate"
+alias logg="git log --graph --all --decorate"
+# log just tagged commits
+alias logt="git log --date-order --graph --tags --simplify-by-decoration --pretty=format:'%ai %h %C(Yellow)%d%Creset'"
+# lists ignored files
+alias ignored="git ls-files --others -i --exclude-standard"
